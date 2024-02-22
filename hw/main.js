@@ -1,3 +1,8 @@
+
+// Створити змінні. Присвоїти кожному з них значення: 'hello','owu','com', 'ua', 1, 10, -999, 123, 3.14, 2.7, 16, true, false.
+// Вивести кожну змінну за допомогою: console.log
+
+
 let a ='hello';
 console.log(a);
 let b ='owu';
@@ -27,6 +32,8 @@ console.log(bool1);
 let bool2=false;
 console.log(bool2);
 
+// Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person (Не об'єкт, просто за допомоги конкатенації)
+
 let firstName='Alona';
 console.log(firstName);
 let middleName='Skobukh';
@@ -39,7 +46,11 @@ let person={
     lastName:'Sergiivna'
 }
 console.log(person);
+console.log(`${firstName} ${middleName} ${lastName}`);
 
+
+// За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
+//let a = 100; let b = '100'; let c = true;
 
 let i=100;
 console.log(typeof i);
