@@ -42,10 +42,9 @@ let book1={
     title: `Little women`,
     pageCount:408,
     genre:`novel`,
-    authors:{
+    authors:[{
         name:`Louisa May Alcott`,
-        age:1832
-    }
+        age:1832}]
 }
 console.log(book1);
 
@@ -53,34 +52,65 @@ let book2={
     title: `The Da Vinci Code`,
     pageCount:480,
     genre:`detective`,
-    authors:{
+    authors:[{
         name:`Dan Brown`,
-        age:1964
-    }
+        age:1964}]
 }
 console.log(book2);
-
+console.log(book2.authors[0]);
 let book3={
     title:`Dune`,
     pageCount:546,
     genre:`fantasi`,
-    authors:{
+    authors:[{
         name:`Frank Herbert`,
-        age:1965
-    }
+        age:1965}]
 }
 console.log(book3);
-
-
-
+console.log(book3.authors[0].name);
 //- Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
+let users=[
+    {id:1,name:`Anna`, username:`Aaa`,password:1111},
+    {id:2,name:`Vira`, username:`Bbb`,password:2222},
+    {id:3,name:`Lena`, username:`Ccc`,password:3333},
+    {id:4,name:`Hazar`, username:`Ddd`,password:4444},
+    {id:5,name:`Ivan`, username:`Iii`,password:5555},
+    {id:6,name:`Taras`, username:`Fff`,password:6666},
+    {id:7,name:`Petro`, username:`Ggg`,password:7777},
+    {id:8,name:`Alona`, username:`Lll`,password:8888},
+    {id:9,name:`Nadia`, username:`Kkk`,password:9999},
+    {id:10,name:`Victor`, username:`Mmm`,password:1010}
+];
+console.log(users);
+console.log(users[0].password);
+console.log(users[1].password);
+console.log(users[2].password);
+console.log(users[3].password);
+console.log(users[4].password);
+console.log(users[5].password);
+console.log(users[6].password);
+console.log(users[7].password);
+console.log(users[8].password);
+console.log(users[9].password);
 
 
 //Логічні розгалуження:
    // - Є змінна х, якій ви надаєте довільне числове значення.
+let x=+prompt(15);
   //  Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
+if (x!==0) {console.log(true);}
+else {console.log(false);}
+console.log(x);
+
+
 //- Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 //(в першу, другу, третю или четверту частину години).
+
+
+
+
+
+
 //- У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
 //- Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
   //  - Користувач вводить або має два числа.
