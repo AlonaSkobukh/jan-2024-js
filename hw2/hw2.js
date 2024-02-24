@@ -16,29 +16,29 @@ console.log(arr[9]);
 
 //- Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 
-//let book1={
-  // title: `Little women`,
-  // pageCount:408,
-  // genre:`novel`
-//}
-//console.log(book1);
+let book1={
+   title: `Little women`,
+   pageCount:408,
+   genre:`novel`
+}
+console.log(book1);
 
-//let book2={
-  // title: `The Da Vinci Code`,
-  // pageCount:480,
-  // genre:`detective`
-//}
-//console.log(book2);
+let book2={
+   title: `The Da Vinci Code`,
+   pageCount:480,
+   genre:`detective`
+}
+console.log(book2);
 
-//let book3={
-  //  title:`Dune`,
-  //  pageCount:546,
-  // genre:`fantasi`
-//}
-//console.log(book3);
+let book3={
+    title:`Dune`,
+    pageCount:546,
+   genre:`fantasi`
+}
+console.log(book3);
 
 //- Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
-let book1={
+let book4={
     title: `Little women`,
     pageCount:408,
     genre:`novel`,
@@ -46,9 +46,10 @@ let book1={
         name:`Louisa May Alcott`,
         age:1832}]
 }
-console.log(book1);
+console.log(book4);
+console.log(book4.authors[0]);
 
-let book2={
+let book5={
     title: `The Da Vinci Code`,
     pageCount:480,
     genre:`detective`,
@@ -56,9 +57,9 @@ let book2={
         name:`Dan Brown`,
         age:1964}]
 }
-console.log(book2);
-console.log(book2.authors[0]);
-let book3={
+console.log(book5);
+console.log(book5.authors[0]);
+let book6={
     title:`Dune`,
     pageCount:546,
     genre:`fantasi`,
@@ -66,8 +67,8 @@ let book3={
         name:`Frank Herbert`,
         age:1965}]
 }
-console.log(book3);
-console.log(book3.authors[0].name);
+console.log(book6);
+console.log(book6.authors[0].name);
 //- Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 let users=[
     {id:1,name:`Anna`, username:`Aaa`,password:1111},
@@ -96,32 +97,68 @@ console.log(users[9].password);
 
 //Логічні розгалуження:
    // - Є змінна х, якій ви надаєте довільне числове значення.
-//let x=+prompt(15);
+let x=15;
   //  Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
-//if (x!==0) {console.log(true);}
-//else {console.log(false);}
-//console.log(x);
+if (x!==0) {console.log(true);}
+else {console.log(false);}
+console.log(x);
 
+x=1;
+if (x!==0) {console.log(true);}
+else {console.log(false);}
+console.log(x);
+
+x=0
+if (x!==0) {console.log(true);}
+else {console.log(false);}
+console.log(x);
+
+x=-3
+if (x!==0) {console.log(true);}
+else {console.log(false);}
+console.log(x);
 
 //- Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 //(в першу, другу, третю или четверту частину години).
-//let time=+prompt(20);
-//if (time>=0 && time<=14) {console.log('В першу частину години');}
-//if (time>=15 && time<=30) {console.log('В другу частину години');}
-//if (time>=31 && time<=45) {console.log('В третю частину години');}
-//if (time>46 && time<=59) {console.log('В четверту частину години');}
+ let time=+prompt(20);
+ if (time>=0 && time<=14) {console.log('В першу частину години');}
+ else if (time>=15 && time<=30) {console.log('В другу частину години');}
+ else if (time>=31 && time<=45) {console.log('В третю частину години');}
+ else if (time>46 && time<=59) {console.log('В четверту частину години');}
 
 
 //- У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
-let day=+prompt(3);
+let day=+prompt(8);
 if (day>=1 && day<=10) {console.log('В першу декаду');}
-if (day>=11 && day<=20) {console.log('В другу декаду');}
-if (day>=21 && day<=31) {console.log('В третю декаду');}
+else if (day>=11 && day<=20) {console.log('В другу декаду');}
+else if (day>=21 && day<=31) {console.log('В третю декаду');}
 
 
 //- Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
-
-
+let date=7;
+switch (date) {
+    case 1:
+        console.log(`Monday`);
+        break;
+    case 2:
+        console.log(`Tuesday`);
+        break;
+    case 3:
+        console.log(`Wednesday`);
+        break;
+    case 4:
+        console.log(`Thursday`);
+        break;
+    case 5:
+        console.log(`Friday`);
+        break;
+    case 6:
+        console.log(`Saturday`);
+        break;
+    case 7:
+        console.log(`Sunday`);
+        break;
+}
 
 
 
