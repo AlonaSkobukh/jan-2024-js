@@ -16,8 +16,11 @@ while (i < 20)
 }
 //- За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
 
-
-
+let v=0;
+while (v < 20)
+{document.write(`<h1>Good luck!</h1>`,v);
+    v++
+}
 
 //- Використовуючи данні з масиву, за допомоги document.write та циклу
 //побудувати структуру по шаблону
@@ -105,9 +108,8 @@ let users = [
     {name: 'olya', age: 31, status: false},
     {name: 'max', age: 31, status: true}
 ];
-
 for (let user of users) {
-if (user.status===true){console.log(user);}
+ if (user.status===true){console.log(user);}
 }
 for (let user of users){
  if (user.status===false){console.log(user);}
