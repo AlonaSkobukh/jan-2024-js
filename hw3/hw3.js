@@ -26,16 +26,10 @@ while (v < 20)
 //побудувати структуру по шаблону
 //Масив:
  let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-for (let i=0; i<1; i++) {document.write (`<ul>
-    <li>'html'</li>
-    <li>'javascript'</li>
-    <li>'mysql'</li>
-    <li>'mongodb'</li>
-    <li>'react'</li>
-    <li>'angular'</li>
-    <li>'node.js'</li>
-</ul>`);
+document.write (`<ul>`)
+for (let i=0; i<listOfItems.length ; i++) {document.write (`<li>${listOfItems[i]}</li>`)
 }
+document.write (`</ul>`)
 //
 //ШАБЛОН:
 //    <ul>
