@@ -124,52 +124,46 @@ let min=arguments[0];
 let res1 =min(2,5,8,9,11);
 
 // створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-let numbers=[6,3,4,5];
-let newArr=[]
-function sum(arr){
-    for (const arrElement of arr) {
-        newArr[newArr.length]= arrElement+ arrElement
 
+let total=0;
+function sum(arr) {
+    for (const arrElement of arr) { total+=arrElement;
     }
-
+    return total
 }
-sum(numbers);
-console.log(numbers);
-console.log(newArr);
-// створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
+let num=[6,3,4,5];
+console.log(sum(num))
+//// створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 //Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-
+let numbers2=[ 11,22,33,44];
+function swap(arr,index1,index2) {
+    let  num1=arr[index1];
+    let  num2=arr[index2];
+    arr.splice(index2,1,num1);
+    arr.splice(index1,1,num2);
+    return console.log(arr)
+}
+swap(numbers2,0,1)
 
 // Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 //Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 let money=[
-    {currency:'USD',value:40},
-    {currency:'EUR',value:42}
+{currency:'USD',value:40},
+{currency:'EUR',value:42}
 ];
-//function suma(currency,value) {
-//    console.log(`${currency} /${value}`)
-//    for (const moneyElement of money) {
-//        suma(moneyElement.currency,moneyElement.value)
-//
-//    }
-//}
-//console.log(suma);
-//let res=suma(10000,40);
-//console.log(res)
-//for (const moneyElement of money) {
-   // if (moneyElement.currency)
-//for (let user of users){
-    //if (user.age>30){console.log(user);}
-//}
-//if (moneyElement.currency `USD`)
-   // return currency/value;
+    for (const moneyElement of money) {
+    console.log(moneyElement)
+    for (const key in moneyElement) {
+        console.log(key, moneyElement[key]);
+    }
+}
+    function exchange(sumUAH,currencyValues,exchangeCurrency) {
+        if (exchangeCurrency ===currencyValues[0].currency) {
+            console.log(sumUAH / currencyValues[0].value)
+        } else if (exchangeCurrency === currencyValues[1].currency) {
+            console.log(sumUAH / currencyValues[1].value)
+        }
+    }
 
-
-
-
-
-
-
-
-
+    exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD')
 
