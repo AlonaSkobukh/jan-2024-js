@@ -93,19 +93,6 @@ for (const datum of data) {
     obj(datum.id,datum.name,datum.age);
 }
 
-// створити функцію яка повертає найменьше число з масиву
-function min() {
-    let min=arguments[0];
-    for (const item of arguments) {
-        if (item<min){
-            min=item;
-        }
-    }
-    console.log(min)
-    return min
-}
-let res1 =min(2,5,8,9,11);
-
 // створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 
 let total=0;
