@@ -137,8 +137,79 @@ console.log(filter);
     });
 console.log(map)
 console.log(coursesAndDurationArray)
+
+
 //=========================
+
+
+
+
 //    описати колоду карт (від 6 до туза без джокерів)
+
+const cardSuits=[
+
+{cardSuit: 'spades', value: 6, color: 'black'};
+{cardSuit: 'spades', value: 7, color: 'black'};
+{cardSuit: 'spades', value: 8, color: 'black'};
+{cardSuit: 'spades', value: 9, color: 'black'};
+{cardSuit: 'spades', value: 10, color: 'black'};
+{cardSuit: 'spades', value: 'ace', color: 'black'};
+{cardSuit: 'spades', value: 'jack', color: 'black'};
+{cardSuit: 'spades', value: 'queen', color: 'black'};
+{cardSuit: 'spades', value: 'king', color: 'black'};
+{cardSuit: 'spades', value: 'joker', color: 'black'};
+{cardSuit: 'diamonds', value: 6, color: 'red'};
+{cardSuit: 'diamonds', value: 7, color: 'red'};
+{cardSuit: 'diamonds', value: 8, color: 'red'};
+{cardSuit: 'diamonds', value: 9, color: 'red'};
+{cardSuit: 'diamonds', value: 10, color: 'red'};
+{cardSuit: 'diamonds', value: 'ace', color: 'red'};
+{cardSuit: 'diamonds', value: 'jack', color: 'red'};
+{cardSuit: 'diamonds', value: 'queen', color: 'red'};
+{cardSuit: 'diamonds', value: 'king', color: 'red'};
+{cardSuit: 'diamonds', value: 'joker', color: 'red'};
+{cardSuit: 'hearts', value: 6, color: 'red'};
+{cardSuit: 'hearts', value: 7, color: 'red'};
+{cardSuit: 'hearts', value: 8, color: 'red'};
+{cardSuit: 'hearts', value: 9, color: 'red'};
+{cardSuit: 'hearts', value: 10, color: 'red'};
+{cardSuit: 'hearts', value: 'ace', color: 'red'};
+{cardSuit: 'hearts', value: 'jack', color: 'red'};
+{cardSuit: 'hearts', value: 'queen', color: 'red'};
+{cardSuit: 'hearts', value: 'king', color: 'red'};
+{cardSuit: 'hearts', value: 'joker', color: 'red'};
+{cardSuit: 'clubs', value: 6, color: 'black'};
+{cardSuit: 'clubs', value: 7, color: 'black'};
+{cardSuit: 'clubs', value: 8, color: 'black'};
+{cardSuit: 'clubs', value: 9, color: 'black'};
+{cardSuit: 'clubs', value: 10, color: 'black'};
+{cardSuit: 'clubs', value: 'ace', color: 'black'};
+{cardSuit: 'clubs', value: 'jack', color: 'black'};
+{cardSuit: 'clubs', value: 'queen', color: 'black'};
+{cardSuit: 'clubs', value: 'king', color: 'black'};
+{cardSuit: 'clubs', value: 'joker', color: 'black'};]
+
+
+
+
+
+let cardSuits=['spades', 'diamonds','hearts', 'clubs'];
+let values=[6,7,8,9,10, 'ace','jack','queen','king','joker'];
+
+
+let desk=() =>{
+    let desks=[];
+    for (const  cardSuit of cardSuits) {
+        for (const value of values) {
+           desks.push({  cardSuit: cardSuit,value:value  })
+
+        }
+        
+    }
+    desks.map(item=>item.cardSuit === 'diamonds'||item.cardSuit === 'hearts' ? item.color = `red` :item.color = `black`)
+return desks
+}
+console.log(desk());
 
 
 //- знайти піковий туз
