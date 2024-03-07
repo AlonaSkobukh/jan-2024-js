@@ -48,10 +48,10 @@ console.log(str6.trim());
 //let arr = stringToArray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
 
 let str7 = 'Ревуть воли як ясла повні';
-let arr=str7.split(` `);
-console.log(arr)
+console.log(str7.split(` `));
 
-
+//let arr=str7.split(` `);
+//console.log(arr)
 
 //- є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
 let numbers=[10,8,-7,55,987,-1011,0,1050,0];
