@@ -244,7 +244,9 @@ console.log(club)
 //}
 let reduce=cards.reduce(
     (acc, card) =>{
-        acc[card.cardSuit].push(card)
+        let {cardSuit}=card;
+        acc[cardSuit].push(card)
+        //acc[card.cardSuit].push(card)
 return acc;
     },{spades:[],diamonds:[],hearts:[],clubs:[]});
    //{
