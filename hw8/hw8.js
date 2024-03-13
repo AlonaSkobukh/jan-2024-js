@@ -240,7 +240,7 @@ let cinderellas=[
     new Cinderella(`Cinderella5`,`22`,`39`),
     new Cinderella(`Cinderella6`,`25`,`38`),
     new Cinderella(`Cinderella7`,`40`,`35`),
-    new Cinderella(`Cinderella8`,`45`,`38`),
+    new Cinderella(`Cinderella8`,`45`,`39`),
     new Cinderella(`Cinderella8`,`65`,`31`)
 ] ;
 console.log(cinderellas);
@@ -260,7 +260,7 @@ class Prince {
         return`Hello my name is ${this.name}`;
     }
 }
-let prince= new Prince(`Petya`,`80`,`30`);
+let prince= new Prince(`Petya`,`80`,`31`);
 console.log(prince);
 console.log(prince.greeting())
 
@@ -287,9 +287,9 @@ console.log(prince.greeting())
 //console.log(prince);
 //    За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 for (const cinderella of cinderellas) {
-    if (cinderella.footSize === `30`) {
+    if (cinderella.footSize === prince.shoe) {
         console.log(cinderella,`Wedding`)}
-    else if(cinderella.footSize !== `30`){
+    else if(cinderella.footSize !== prince.shoe){
         console.log(`Good bye,you are not my princess`)
 
     }
@@ -298,6 +298,6 @@ for (const cinderella of cinderellas) {
 }
 //   Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
-let findFootSize=(cinderella)=>cinderella.footSize===`31`;
+let findFootSize=(cinderella)=>cinderella.footSize===prince.shoe;
 let result=cinderellas.find( findFootSize);
 console.log(result)
