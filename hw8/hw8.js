@@ -56,10 +56,10 @@ class Client {
         this.phoneid=phone;
         this. order= order;
 
-       //this.addOrder=function (order){
-          // this.order.push({order})
+        //this.addOrder=function (order){
+        // this.order.push({order})
 
-       //}
+        //}
 
     }
 
@@ -93,10 +93,10 @@ console.log(clients);
 
 //- Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 clients.sort(
-     (a,b
-   )=>a.order.length-b.order.length);
+    (a,b
+    )=>a.order.length-b.order.length);
 
- console.log(clients);
+console.log(clients);
 //
 //- Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
 
@@ -130,7 +130,7 @@ function Car(model,company, year,maxSpeed ,volume,driver=[]) {
     //-- changeYear (newValue) - змінює рік випуску на значення newValue
     this.changeYear = function (newValue) {
         this.year=newValue
-        }
+    }
 //-- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
     this.increaseMaxSpeed =function (newSpeed){
         this.maxSpeed+=newSpeed;
@@ -153,12 +153,12 @@ car.info();
 //Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
 class Car1{
     constructor(model,company, year,maxSpeed ,volume,driver=[]) {
-            this.model = model;
-            this.company = company;
-            this.year = year;
-            this.maxSpeed = maxSpeed;
-            this.volume = volume;
-            this.driver=driver;
+        this.model = model;
+        this.company = company;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.volume = volume;
+        this.driver=driver;
 
 
         this.info = function () {
@@ -242,7 +242,7 @@ let cinderellas=[
     new Cinderella(`Cinderella7`,`40`,`35`),
     new Cinderella(`Cinderella8`,`45`,`38`),
     new Cinderella(`Cinderella8`,`65`,`31`)
-    ] ;
+] ;
 console.log(cinderellas);
 
 
@@ -260,9 +260,9 @@ class Prince {
         return`Hello my name is ${this.name}`;
     }
 }
-    let prince= new Prince(`Petya`,`80`,`30`);
-    console.log(prince);
-    console.log(prince.greeting())
+let prince= new Prince(`Petya`,`80`,`30`);
+console.log(prince);
+console.log(prince.greeting())
 
 
 //class Prince extends Cinderella {
@@ -289,10 +289,10 @@ class Prince {
 for (const cinderella of cinderellas) {
     if (cinderella.footSize === `30`) {
         console.log(cinderella,`Wedding`)}
-        else if(cinderella.footSize !== `30`){
-            console.log(`Good bye,you are not my princess`)
+    else if(cinderella.footSize !== `30`){
+        console.log(`Good bye,you are not my princess`)
 
-        }
+    }
 
 
 }
