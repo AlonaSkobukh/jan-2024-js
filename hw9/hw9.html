@@ -164,14 +164,17 @@
         let simpsonDiv=document.createElement('div');
         document.body.appendChild(simpsonDiv);
         simpsonDiv.classList.add('simpson')
-          for (const simpson of simpsons){
-                  let  item=document.createElement('div')
-                  let simpsonDivH2=document.createElement('div');
-                  item.classList.add(`member`);
-                  simpsonDivH2.innerHTML= `<h4>name:${simpson.name} </h4><h4>surname:${simpson.surname}</h4> <h4> age:${simpson. age}</h4> <h4>info:${simpson.info}</h4> <h4>photo: ${simpson. photo}</h4>`;
-                  item.append(simpsonDivH2);
-                  simpsonDiv.appendChild(item)
-         }
+          for (const simpson of simpsons) {
+              let item = document.createElement('div')
+              let simpsonDivH2 = document.createElement('div');
+              let img = document.createElement('img');
+              img.src=simpson.photo;
+              item.classList.add(`member`);
+              img.innerText= `${simpson.photo}`;
+              simpsonDivH2.innerHTML = `<h4>name:${simpson.name} </h4><h4>surname:${simpson.surname}</h4> <h4> age:${simpson.age}</h4> <h4>info:${simpson.info}</h4>`;
+              item.append(simpsonDivH2,img);
+              simpsonDiv.appendChild(item)
+          }
 
         // <!--    =========================-->
         // <!--    Цикл в циклі-->
