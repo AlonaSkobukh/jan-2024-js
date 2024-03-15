@@ -8,21 +8,22 @@
     <title>Document</title>
     <style>
 .wrap{
-    color: darkcyan;
-    background: skyblue;
+    color: whitesmoke;
+    background: grey;
     font-size: 30px;
 }
-.courses{
+.course{
     border: 2px solid black;
-    height: 170vh;
 }
 .item{
     display: flex;
+    align-items: center;
     flex-direction: column;
     border: 2px solid black;
     margin: 10px;
     padding: 10px;
 }
+
 .member{
     display: flex;
     flex-direction: column;
@@ -76,13 +77,13 @@
             {title: 'FullStack', monthDuration: 7},
             {title: 'Frontend', monthDuration: 4}
         ];
-        let coursesDiv=document.createElement('div');
-        document.body.appendChild(coursesDiv);
+        let courseDiv=document.createElement('div');
+        document.body.appendChild(courseDiv);
 
-        for (const coursesElement of coursesAndDurationArray) {
+        for (const courseElement of coursesAndDurationArray) {
             let  item=document.createElement('div');
-            item.innerText=`Title :  ${coursesElement.title} , MonthDuration :  ${coursesElement.monthDuration}`;
-            coursesDiv.appendChild(item)
+            item.innerText=`Title :  ${courseElement.title} , MonthDuration :  ${courseElement.monthDuration}`;
+            courseDiv.appendChild(item)
         }
         //
         <!--Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration-->
@@ -101,17 +102,17 @@
         ];
         let coursesArray1Div=document.createElement('div');
         document.body.appendChild(coursesArray1Div);
-        coursesArray1Div.classList.add('courses1')
+        coursesArray1Div.classList.add('course1')
 
-        for (const courses1Element of coursesAndDurationArray1) {
+        for (const course1Element of coursesAndDurationArray1) {
             let  item=document.createElement('div');
             let heading=document.createElement('h1');
             let description=document.createElement('p');
             item.classList.add(`item`);
             heading.classList.add(`heading`);
             description.classList.add(`description`);
-            heading.innerText=`Title :  ${courses1Element.title}`;
-            description.innerText=`MonthDuration :  ${courses1Element.monthDuration}`;
+            heading.innerText=`Title :  ${course1Element.title}`;
+            description.innerText=`MonthDuration :  ${course1Element.monthDuration}`;
             item.append(heading, description);
             coursesArray1Div.appendChild(item)
         }
@@ -246,35 +247,34 @@
         ];
         <!--    Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами-->
         <!--    Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом-->
+         //
         let coursesArrayDiv=document.createElement('div');
         document.body.appendChild(coursesArrayDiv);
-        coursesArrayDiv.classList.add('courses')
-        for (const courses of coursesArray) {
+        coursesArrayDiv.classList.add('course')
+        for (const course of coursesArray) {
             let  item=document.createElement('div')
-            let coursesDivH2=document.createElement('h2');
-            let coursesDivH4=document.createElement('h4');
-            let coursesDivH3=document.createElement('h3');
+            let courseDivH2=document.createElement('h2');
+            let courseDivH4=document.createElement('h3');
+            let courseDivH3=document.createElement('h4');
+            item.classList.add(`item`);
+            courseDivH2.classList.add(`h2`);
+            courseDivH4.classList.add(`h3`);
+            courseDivH2.innerText= `${course.title}`;
+            courseDivH4.innerText=`${course.monthDuration}`;
+            courseDivH3.innerText=`${course.hourDuration}`;
+
             let ul=document.createElement(`ul`);
             document.body.appendChild(ul);
-            item.classList.add(`item`);
-            coursesDivH2.innerText= `${courses.title}`;
-            coursesDivH4.innerText=`${courses.monthDuration}`;
-            coursesDivH3.innerText=`${courses.hourDuration}`;
-            item.append(coursesDivH2,coursesDivH4, coursesDivH3,ul);
+            for (const element of course.modules) {
+                    let item=document.createElement(`li`);
+                    item.innerText=`${[element]}`
+                    ul.appendChild(item);
+                }
+            document.body.appendChild(ul);
+            item.append(courseDivH2,courseDivH4, courseDivH3,ul);
             coursesArrayDiv.appendChild(item)
         }
-        for (const Element of coursesArray.modules) {
-            let ul=document.createElement(`li`)
-            ul.innerText=`${[Element]}`
-            ul.appendChild(ul);
-        }
-        document.body.appendChild(ul);
-       // for (const coursesDivUlElement of coursesArray.modules) {
-       //     let li=document.createElement(`li`)
-       //     li.innerText=`${coursesArray.modules[Element]}`
-       //     ul.appendChild(li);
-       // }
-       // document.body.appendChild(ul);
+
 </script>
 </body>
 </html>
