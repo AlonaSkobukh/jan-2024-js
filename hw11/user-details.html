@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .userinfo {
+            text-align: center;
+        }
+
+        .pcompany {
+            background-color: darkcyan;
+        }
+
+        .padres {
+            background-color: burlywood;
+        }
+
+        .pcontacts {
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+<body>
+<h1 class="userinfo">Information of persons</h1>
+<a href="users.html">Info</a>
+<script>
+    // - зробити файл users.html
+    // з ендпоінту http://jsonplaceholder.typicode.com/users отримати всіх користувачів
+    //     вивести їх id + name списком та додати посилання з href = user-details.html?id=XXX (замість ХХХ - айді юзера)
+    // при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів)
+    // отримана через додатковий запит (https://jsonplaceholder.typicode.com/users/XXX   де ХХХ - айді користувача)
+
+    console.log(location)
+    let userid = new URL(location.href).searchParams.get('id')
+    let newURL = 'https://jsonplaceholder.typicode.com/users/' + userid
+
+    fetch(newURL)
+        .then(response => response.json())
+        .then(users => {
+            console.log(users)
+            let div = document.createElement('div')
+            document.body.appendChild(div)
+
+            let h3 = document.createElement('h3')
+            h3.innerText = `id - ${users.id}
+                        Name: ${users.name}`
+            let pcontacts = document.createElement('p')
+            let user1 = users
+            pcontacts.classList.add('pcontacts')
+            pcontacts.innerText = `Contacts
+                        Email - ${user1.email}
+                        Phone - ${user1.phone}
+                        Username - ${user1.username}
+                        Website - ${user1.website}
+
+                        `
+            let padres = document.createElement('p')
+            let address = users.address
+            padres.classList.add('padres')
+            padres.innerText = `Address
+                        City: ${address.city}
+                        Street: ${address.street}
+                        Suite: ${address.suite}
+                        Zipcode: ${address.zipcode}
+                        Geo: lat:${address.geo.lat} lng:${address.geo.lng}
+                        `
+            let pcompany = document.createElement('p')
+            pcompany.classList.add('pcompany')
+            let company = users.company
+            pcompany.innerText = `Company
+                        bs: ${company.bs}
+                        Catch Phrase: ${company.catchPhrase}
+                        Name: '${company.name}'
+                        `
+
+            div.append(h3, pcontacts, padres, pcompany)
+        })
+
+
+
+
+
+
+    //         for (const user of users) {
+    //             let div = document.createElement('div')
+    //             document.body.appendChild(div)
+    //
+    //             let h3 = document.createElement('h3')
+    //             h3.innerText = `id - ${user.id}
+    //             Name: ${user.name}`
+    //             let pcontacts = document.createElement('p')
+    //             let user1 = user
+    //             pcontacts.classList.add('pcontacts')
+    //             pcontacts.innerText = `Contacts
+    //             Email - ${user1.email}
+    //             Phone - ${user1.phone}
+    //             Username - ${user1.username}
+    //             Website - ${user1.website}
+    //
+    //             `
+    //             let padres = document.createElement('p')
+    //             let address = user.address
+    //             padres.classList.add('padres')
+    //             padres.innerText = `Address
+    //             City: ${address.city}
+    //             Street: ${address.street}
+    //             Suite: ${address.suite}
+    //             Zipcode: ${address.zipcode}
+    //             Geo: lat:${address.geo.lat} lng:${address.geo.lng}
+    //             `
+    //             let pcompany = document.createElement('p')
+    //             pcompany.classList.add('pcompany')
+    //             let company = user.company
+    //             pcompany.innerText = `Company
+    //             bs: ${company.bs}
+    //             Catch Phrase: ${company.catchPhrase}
+    //             Name: '${company.name}'
+    //             `
+    //
+    //             div.append(h3,pcontacts,padres,pcompany)
+    //         }
+    // })
+
+
+</script>
+</body>
+</html>

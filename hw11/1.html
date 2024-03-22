@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        p{
+            font-size: 4vw
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
+    fetch('https://dummyjson.com/carts')
+        .then(res => res.json())
+        .then(carts => {
+            for (const cart of carts.carts){
+                console.log(cart)
+
+                let div = document.createElement('div')
+                document.body.appendChild(div)
+                div.classList.add('div')
+                let carts = document.createElement('h1')
+                carts.innerText = `${cart.id}`
+                carts.classList.add('text')
+                div.append(carts)
+
+                for (const value of cart.products) {
+                    let img = document.createElement('img')
+                    img.src = value.thumbnail
+                    img.classList.add('img')
+                    let h2 = document.createElement('h2')
+                    h2.classList.add('h2')
+                    let h1 = document.createElement('h1')
+                    h1.innerText = `Product: ${value.title},   Id:${value.id}`
+                    h2.innerText = `Price : ${value.price}, Quantity : ${value.quantity}`
+                    let text = document.createElement('text')
+                    div.append(h1,img,h2,text)
+                }
+            }
+        })
+
+
+</script>
+</body>
+</html>
