@@ -11,17 +11,6 @@
             text-align: center;
         }
 
-        .pcompany {
-            background-color: darkcyan;
-        }
-
-        .padres {
-            background-color: burlywood;
-        }
-
-        .pcontacts {
-            background-color: cornflowerblue;
-        }
     </style>
 
 </head>
@@ -45,87 +34,31 @@
             console.log(users)
             let div = document.createElement('div')
             document.body.appendChild(div)
-
-            let h3 = document.createElement('h3')
-            h3.innerText = `id - ${users.id}
-                        Name: ${users.name}`
-            let pcontacts = document.createElement('p')
-            let user1 = users
-            pcontacts.classList.add('pcontacts')
-            pcontacts.innerText = `Contacts
-                        Email - ${user1.email}
-                        Phone - ${user1.phone}
-                        Username - ${user1.username}
-                        Website - ${user1.website}
-
+            let h4 = document.createElement('h4')
+            h4.innerText = `id: ${users.id}
+                        Name: ${users.name}
+                        Username: ${users.username}
+                        Email - ${users.email}
+                        Phone - ${users.phone}
+                        Website - ${users.website}
                         `
-            let padres = document.createElement('p')
+            let father = document.createElement('p')
             let address = users.address
-            padres.classList.add('padres')
-            padres.innerText = `Address
+            father.classList.add('father')
+            father.innerText = `
                         City: ${address.city}
                         Street: ${address.street}
                         Suite: ${address.suite}
                         Zipcode: ${address.zipcode}
-                        Geo: lat:${address.geo.lat} lng:${address.geo.lng}
+                        Geo:
+                        lat:${address.geo.lat}
+                        lng:${address.geo.lng}
+                         bs: ${address.bs}
+                        Catch Phrase: ${address.catchPhrase}
+                        Name:${address.name}
                         `
-            let pcompany = document.createElement('p')
-            pcompany.classList.add('pcompany')
-            let company = users.company
-            pcompany.innerText = `Company
-                        bs: ${company.bs}
-                        Catch Phrase: ${company.catchPhrase}
-                        Name: '${company.name}'
-                        `
-
-            div.append(h3, pcontacts, padres, pcompany)
+            div.append(h4,father)
         })
-
-
-
-
-
-
-    //         for (const user of users) {
-    //             let div = document.createElement('div')
-    //             document.body.appendChild(div)
-    //
-    //             let h3 = document.createElement('h3')
-    //             h3.innerText = `id - ${user.id}
-    //             Name: ${user.name}`
-    //             let pcontacts = document.createElement('p')
-    //             let user1 = user
-    //             pcontacts.classList.add('pcontacts')
-    //             pcontacts.innerText = `Contacts
-    //             Email - ${user1.email}
-    //             Phone - ${user1.phone}
-    //             Username - ${user1.username}
-    //             Website - ${user1.website}
-    //
-    //             `
-    //             let padres = document.createElement('p')
-    //             let address = user.address
-    //             padres.classList.add('padres')
-    //             padres.innerText = `Address
-    //             City: ${address.city}
-    //             Street: ${address.street}
-    //             Suite: ${address.suite}
-    //             Zipcode: ${address.zipcode}
-    //             Geo: lat:${address.geo.lat} lng:${address.geo.lng}
-    //             `
-    //             let pcompany = document.createElement('p')
-    //             pcompany.classList.add('pcompany')
-    //             let company = user.company
-    //             pcompany.innerText = `Company
-    //             bs: ${company.bs}
-    //             Catch Phrase: ${company.catchPhrase}
-    //             Name: '${company.name}'
-    //             `
-    //
-    //             div.append(h3,pcontacts,padres,pcompany)
-    //         }
-    // })
-
 
 </script>
 </body>

@@ -25,14 +25,10 @@
                 console.log(user)
                 let div = document.createElement('div')
                 document.body.append(div)
+
                 let li = document.createElement('li')
-
-               li.innerText = `id: ${user.id}
+                li.innerText = `id: ${user.id}
                 name: ${user.name}`
-
-                let img = document.createElement('img')
-                img.src = users.image
-                img.classList.add('img')
 
                 let a = document.createElement('a')
                 a.href = `user-details.html?id=${user.id}`
@@ -43,10 +39,10 @@
                 })
 
                 let hr =document.createElement('hr')
-                div.append(li,a,hr,img)
+                div.append(li,a,hr)
 
             }
         })
 </script>
 </body>
-</html></html>
+</html>
