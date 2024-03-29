@@ -1,0 +1,77 @@
+/*index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+margin: 0;
+width: 100%;
+max-width: 100%;
+overflow-x: hidden;
+background-image: url("png/background.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}
+
+.divbaty{
+display: grid;
+grid-template-columns: repeat(2, 200px);
+justify-content: center;
+grid-gap: 10px;
+
+width: 100vw;
+height: 250vh;
+
+}
+
+.divSon{
+margin-top: 30px ;
+border: 2px solid cadetblue;
+border-radius: 4px;
+gap: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+background: rgb(35,36,0);
+background: linear-gradient(90deg, rgba(35,36,0,0.6615896358543417) 0%, rgba(121,78,9,1) 55%, rgba(145,17,82,0.6783963585434174) 100%);
+}
+
+h3{
+text-align: center;
+width: 12vw;
+word-break: normal;
+margin: 0;
+font-family: "Rubik", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+}
+.h31{
+margin-top: 8px;
+}
+img{
+width: 7vw;
+height: 15vh;
+margin: 0;
+}
+
+button{
+background-color: cadetblue;
+width: 8vw;
+height: 4vh;
+border-radius: 4px;
+margin: 8px;
+font-size: 2vh;
+color: white;
+font-family: "Rubik", sans-serif;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+}
+
+button:hover{
+background-color:#002ead;
+transition: 0.5s;
+}

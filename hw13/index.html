@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="cssindex.css">
+    <title>PoliceDataBase</title>
+    <style>
+        /*index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.*/
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+        body{
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .divbaty{
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+            justify-content: center;
+            grid-gap: 10px;
+
+            width: 100vw;
+            height: 250vh;
+
+        }
+
+        .divSon{
+            margin-top: 30px ;
+            border: 2px solid cadetblue;
+            border-radius: 4px;
+            gap: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background: rgb(35,36,0);
+            background: linear-gradient(90deg, rgba(35,36,0,0.6615896358543417) 0%, rgba(121,78,9,1) 55%, rgba(145,17,82,0.6783963585434174) 100%);
+        }
+
+        h3{
+            text-align: center;
+            width: 12vw;
+            word-break: normal;
+            margin: 0;
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .h31{
+            margin-top: 8px;
+        }
+        img{
+            width: 7vw;
+            height: 15vh;
+            margin: 0;
+        }
+
+        button{
+            background-color: cadetblue;
+            width: 8vw;
+            height: 4vh;
+            border-radius: 4px;
+            margin: 8px;
+            font-size: 2vh;
+            color: white;
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        button:hover{
+            background-color:#002ead;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // В index.html
+    // 1 отримати масив об'єктів з endpoint`а https://jsonplaceholder.typicode.com/users
+    // 2 Вивести id,name всіх user в index.html. Окремий блок для кожного user.
+    // 3 Додати кожному блоку кнопку/посилання , при кліку на яку відбувається перехід
+    // на сторінку user-details.html, котра має детальну інфорацію про об'єкт на який клікнули
+    // Стилизація проєкта -
+    // index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.
+
+    let URL = 'https://jsonplaceholder.typicode.com/users'
+
+    fetch(URL)
+        .then(value => value.json())
+        .then(users => {
+            let divbaty = document.createElement('div')
+            divbaty.classList.add('divbaty')
+            document.body.appendChild(divbaty)
+            for (const user of users) {
+
+                let div = (document.createElement('div'));
+                div.classList.add('divSon')
+
+                let h31 = document.createElement('h3')
+                h31.classList.add('h3')
+                h31.innerText = `ID: ${user.id}`
+
+                let h32 = document.createElement('h3')
+                h32.classList.add('h3')
+                h32.innerText = `Name: ${user.name}`
+
+                let imguser = document.createElement('img')
+                imguser.src = 'png/usericon.png'
+
+                let button = document.createElement('button')
+                button.innerText = 'Information'
+
+                button.addEventListener('click', () => {
+                    location.href = 'user-details.html?id=' + user.id
+                })
+
+                div.append(h31,h32,imguser, button)
+                divbaty.appendChild(div)
+            }
+        })
+
+</script>
+</body>
+</html>

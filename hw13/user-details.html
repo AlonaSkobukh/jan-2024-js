@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    // На странице user-details.html:
+    // 4 Вивести всю, без виключення, інформацію про об'єкт user на який клікнули
+    // 5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
+    // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
+    // 6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку
+    // post-details.html, котра має детальну інфу про поточний пост.
+
+    // user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.
+    console.log(location)
+
+    let userid = new URL(location.href).searchParams.get('id')
+    let newURL = 'https://jsonplaceholder.typicode.com/users/' + userid
+
+    fetch(newURL)
+        .then(value => value.json())
+        .then(user => {
+            console.log(user)
+
+            let divbaty = document.createElement('div');
+            document.body.appendChild(divbaty)
+
+            let h3 = document.createElement('h3')
+            h3.innerText = `Name - ${user.name} and ID:${user.id}`
+
+            let p1 = document.createElement('p');
+            p1.innerText = `Username: ${user.username}
+            email: ${user.email}
+            phone: ${user.phone}`
+
+            let h3Address = document.createElement('h3')
+            h3Address.innerText = 'Address'
+            let p2ad = document.createElement('p')
+            let address = user.address
+            p2ad.innerText = `Street - ${address.street}
+            Suite - ${address.suite}
+            City - ${address.city}
+            Zipcode - ${address.zipcode}
+            Geo - lat:"${address.geo.lat}" lng:"${address.geo.lng}"`
+
+            let p3comp = document.createElement('p')
+            let company = user.company
+            p3comp.innerText = `Company - ${company.name}
+            Use - ${company.catchPhrase}
+            Product - ${company.bs}`
+
+            let button = document.createElement('button')
+            button.innerText = 'post of current user'
+
+
+            divbaty.append(h3, p1, h3Address, p2ad, p3comp, button)
+
+            let urlpost = new URL(location.href).searchParams.get('id')
+            let newurlpost = `https://jsonplaceholder.typicode.com/users/${urlpost}/posts`
+
+            button.addEventListener('click', () => {
+                let divbaty1 = document.createElement('div')
+                document.body.appendChild(divbaty1)
+                fetch(newurlpost)
+                    .then(value => value.json())
+                    .then(posts => {
+                        console.log(posts)
+
+                        for (const post of posts) {
+                            console.log(post)
+
+                            let pbaty1 = document.createElement('p')
+                            pbaty1.innerText = `Post: ${post.title}`
+
+                            let ainfo = document.createElement('a')
+                            ainfo.href = `post-details.html?id=${user.id}`
+                            ainfo.innerText = 'information of this post'
+
+                            ainfo.addEventListener("click", () => {
+                                location.href = "post-details?id=" + user.id
+                            })
+                            divbaty1.append(pbaty1, ainfo)
+                        }
+                    })
+            })
+
+
+        })
+</script>
+</body>
+</html>
