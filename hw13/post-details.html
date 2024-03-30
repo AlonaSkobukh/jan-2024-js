@@ -18,56 +18,52 @@
     // post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.
     //     Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)
 
-    let urlpost = new URL(location.href).searchParams.get('id')
-    let newurlpost = `https://jsonplaceholder.typicode.com/posts/${urlpost}`
+    let div3 = document.createElement('div')
+    document.body.appendChild(div3)
+    div3.classList.add('div3')
 
-    fetch(newurlpost)
+    let userpost = new URL(location.href).searchParams.get('id')
+    let newuserpost = `https://jsonplaceholder.typicode.com/posts/${userpost}`
+
+    fetch(newuserpost)
         .then(value => value.json())
         .then(post => {
             console.log(location)
-            let divBaty1 = document.createElement('div');
-            document.body.appendChild(divBaty1)
+            console.log(post)
+            let div31 = document.createElement('div');
+            div31.classList.add('div31')
 
-            let p1 = document.createElement('p')
-            p1.innerText = `UserId: ${post.userId}
-                ID: ${post.id}
-                Title: ${post.title}
-                Body: ${post.body}
+            let seven = document.createElement('p')
+            seven.innerText = `
+            UserId: ${post.userId}
+            ID: ${post.id}
+            Title: ${post.title}
+            Body: ${post.body}
                 `
 
-            divBaty1.appendChild(p1)
-            let newurlcoment = `https://jsonplaceholder.typicode.com/posts/${post.id}/comments`
-            fetch(newurlcoment)
+            div31.appendChild(seven)
+
+            let div32 = document.createElement('div')
+            div32.classList.add('div32')
+
+            let coment = `https://jsonplaceholder.typicode.com/posts/${post.id}/comments`
+            fetch(coment)
                 .then(value => value.json())
                 .then(coments => {
                     for (const coment of coments) {
-                        let pcoments = document.createElement('p');
-                        pcoments.innerText = `Name ${coment.id}: ${coment.name}`
-                        divBaty1.appendChild(pcoments)
+                        let div4 = document.createElement('div')
+                        div4.classList.add('div4')
+                        let coments = document.createElement('p');
+                        coments.innerText = `Name ${coment.id}: ${coment.name}`
+                        div4.appendChild(coments)
+                        div32.appendChild(div4)
                     }
                 })
 
-
+            div3.append(div31,div32)
         })
 
-    // let urlcoments = new URL(location.href).searchParams.get('id')
-    // let newurlcoments = `https://jsonplaceholder.typicode.com/posts/${urlcoments}/comments`
-    // fetch(newurlcoments)
-    // .then(value => value.json())
-    // .then(post => {
-    //     for (const postElement of post) {
-    //         console.log(postElement.email)
-    //
-    //         // let ainfo = document.createElement('a')
-    //         // ainfo.href = `post-details.html?id=${post.id}`
-    //         // ainfo.innerText = 'information of this post'
-    //         //
-    //         // ainfo.addEventListener("click", () => {
-    //         //     location.href = "post-details?id=" + post.id
-    //         // })
-    //     }
-    //     console.log(location)
-    // })
+
 </script>
 </body>
 </html>

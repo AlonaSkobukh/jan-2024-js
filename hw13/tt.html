@@ -75,3 +75,66 @@ button:hover{
 background-color:#002ead;
 transition: 0.5s;
 }
+/* post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
+/*Всі елементи котрі характеризують users, posts, comments візуалізувати, так,
+щоб було видно що це блоки (дати фон. марджини і тд)*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:ital,wght@0,300..900;1,300..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+margin: 0;
+display: flex;
+overflow-x: hidden;
+background-image: url("png/background3.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}
+
+.divbaty{
+width: 100vw;
+height: 100vh;
+display: flex;
+align-items: center;
+flex-direction: column;
+
+}
+
+.divBaty1{
+width: 50vw;
+height: 25vh;
+border-radius: 10px;
+background: rgb(31,32,33);
+background: linear-gradient(90deg, rgba(31,32,33,0.9669117647058824) 30%, rgba(92,91,89,1) 90%, rgba(136,133,129,0.9136904761904762) 100%);
+}
+
+.divBaty2{
+margin: 10px;
+width: 80vw;
+height: 70vh;
+display: grid;
+grid-template-columns: repeat(4, 300px);
+justify-content: center;
+align-items: center;
+grid-gap: 20px;
+}
+
+.divcoments{
+width: 20vw;
+height: 20vh;
+border-radius: 10px;
+background: rgb(31,32,33);
+background: linear-gradient(90deg, rgba(31,32,33,0.9669117647058824) 35%, rgba(112,110,106,0.8716736694677871) 75%, rgba(136,133,129,0.9136904761904762) 100%);
+}
+
+.divBaty2,.divBaty1{
+color: white;
+text-align: center;
+font-family: "Noto Sans", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+font-variation-settings:
+"wdth" 100;
+}

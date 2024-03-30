@@ -27,18 +27,14 @@
               let div = document.createElement('div')
               document.body.append(div)
               let p = document.createElement('p')
-
               p.innerText = `id: ${user.id}
                 name: ${user.name}`
-
               let a = document.createElement('a')
               a.href = `user-details.html?id=${user.id}`
               a.innerText = 'Information'
-
               a.addEventListener('click',()=>{
                 location.href = 'user-details?id=' + user.id
               })
-
               let hr =document.createElement('hr')
               div.append(p,a,hr)
 

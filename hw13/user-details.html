@@ -5,7 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="cssuser.css">
+    <title>User</title>
 </head>
 <body>
 
@@ -29,69 +30,88 @@
         .then(user => {
             console.log(user)
 
-            let divbaty = document.createElement('div');
-            document.body.appendChild(divbaty)
+            let div1 = document.createElement('div');
+            div1.classList.add('user1')
+            document.body.appendChild(div1)
 
-            let h3 = document.createElement('h3')
-            h3.innerText = `Name - ${user.name} and ID:${user.id}`
+            let User = document.createElement('h4')
+            User.innerText = `
+            Name - ${user.name}
+            Username: ${user.username}
+            ID:${user.id}`
+            User.classList.add('User')
 
-            let p1 = document.createElement('p');
-            p1.innerText = `Username: ${user.username}
+            let Data = document.createElement('div')
+            Data.classList.add('Data')
+            let three = document.createElement('p');
+            three.innerText = `
             email: ${user.email}
-            phone: ${user.phone}`
+            phone: ${user.phone}
+            website: ${user.website} `
+            Data.append(three)
 
-            let h3Address = document.createElement('h3')
-            h3Address.innerText = 'Address'
-            let p2ad = document.createElement('p')
+
+            let Address = document.createElement('div')
+            Address.classList.add('Address')
+            let four = document.createElement('p')
             let address = user.address
-            p2ad.innerText = `Street - ${address.street}
-            Suite - ${address.suite}
+            four.innerText = `
             City - ${address.city}
+            Street - ${address.street}
+            Suite - ${address.suite}
             Zipcode - ${address.zipcode}
-            Geo - lat:"${address.geo.lat}" lng:"${address.geo.lng}"`
+            Geo - lat:"${address.geo.lat}"
+            Geo - lng:"${address.geo.lng}"`
+            Address.append(four)
 
-            let p3comp = document.createElement('p')
+            let Company = document.createElement('div')
+            Company.classList.add('Company')
+            let five = document.createElement('p')
             let company = user.company
-            p3comp.innerText = `Company - ${company.name}
-            Use - ${company.catchPhrase}
-            Product - ${company.bs}`
+            five.innerText = `
+            Company name: ${company.name}
+            Catch Phrase: ${company.catchPhrase}
+            bs: ${company.bs}`
+            Company.append(five)
+            div1.append(User,Data,Address,Company)
 
+            let Button = document.createElement('div')
+            document.body.appendChild(Button)
+            Button.classList.add('Button')
             let button = document.createElement('button')
-            button.innerText = 'post of current user'
+            button.innerText = 'Post of current user'
+            Button.appendChild(button)
+
+            let div2 = document.createElement('div')
+            div2.classList.add('userpost')
+            document.body.appendChild(div2)
 
 
-            divbaty.append(h3, p1, h3Address, p2ad, p3comp, button)
-
-            let urlpost = new URL(location.href).searchParams.get('id')
-            let newurlpost = `https://jsonplaceholder.typicode.com/users/${urlpost}/posts`
+            let userpost = new URL(location.href).searchParams.get('id')
+            let newuserpost = `https://jsonplaceholder.typicode.com/users/${userpost}/posts`
 
             button.addEventListener('click', () => {
-                let divbaty1 = document.createElement('div')
-                document.body.appendChild(divbaty1)
-                fetch(newurlpost)
+                fetch(newuserpost)
                     .then(value => value.json())
                     .then(posts => {
                         console.log(posts)
-
                         for (const post of posts) {
                             console.log(post)
-
-                            let pbaty1 = document.createElement('p')
-                            pbaty1.innerText = `Post: ${post.title}`
-
-                            let ainfo = document.createElement('a')
-                            ainfo.href = `post-details.html?id=${user.id}`
-                            ainfo.innerText = 'information of this post'
-
-                            ainfo.addEventListener("click", () => {
-                                location.href = "post-details?id=" + user.id
+                            let Post = document.createElement('div')
+                            Post.classList.add('Post')
+                            let six = document.createElement('p')
+                            six.innerText = `Post: ${post.title}`
+                            let a = document.createElement('a')
+                            a.href = `post-details.html?id=${post.id}`
+                            a.innerText = 'Post data';
+                            a.addEventListener("click", () => {
+                                location.href = "post-details?id=" + post.id
                             })
-                            divbaty1.append(pbaty1, ainfo)
+                            Post.append(six,a)
+                            div2.appendChild(Post)
                         }
                     })
-            })
-
-
+            });
         })
 </script>
 </body>
