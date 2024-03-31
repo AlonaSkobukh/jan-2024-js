@@ -27,8 +27,9 @@
             border-radius: 10px;
             background:lightsteelblue;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding-left: 70px;
+
             margin-left: 300px;
         ;
         }
@@ -36,7 +37,7 @@
         .div32{
             margin: 10px;
             margin-left: 50px;
-            width: 80vw;
+            width: 100vw;
             height: 70vh;
             display: grid;
             grid-template-columns: repeat(4, 300px);
@@ -54,10 +55,8 @@
         }
 
         .div32,.div31{
-
-            text-align: center;
-
-
+            text-align: center
+        }
 
     </style>
 </head>
@@ -93,7 +92,6 @@
             Title: ${post.title}
             Body: ${post.body}
                 `
-
             div31.appendChild(seven)
             let div32 = document.createElement('div')
             div32.classList.add('div32')
@@ -101,7 +99,9 @@
             fetch(newcoment)
                 .then(value => value.json())
                 .then(coments => {
+                    console.log(coments)
                     for (const coment of coments) {
+                        console.log(coment)
                         let div4 = document.createElement('div')
                         div4.classList.add('div4')
                         let coments = document.createElement('p');

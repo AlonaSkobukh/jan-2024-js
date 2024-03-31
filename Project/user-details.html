@@ -8,78 +8,68 @@
     <title>User</title>
     <style>
         /*index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.*/
-        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
         body{
             margin: 0;
             max-width: 100%;
-            overflow-x: hidden;
-            background-image: url("png/background.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
         }
-
-
-
-        .divuser{
-            display: grid;
-            grid-template-columns: repeat(2, 200px);
-            justify-content: center;
-            grid-gap: 10px;
-
-            width: 100vw;
-            height: 250vh;
-        }
-
-        .div{
-            margin-top: 30px ;
-            border: 2px solid cadetblue;
-            border-radius: 4px;
-            gap: 20px;
-
+        .user1{
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-
-            background: rgb(35,36,0);
-            background: linear-gradient(90deg, rgba(35,36,0,0.6615896358543417) 0%, rgba(121,78,9,1) 55%, rgba(145,17,82,0.6783963585434174) 100%);
+            align-content: space-around;
+            flex-wrap: wrap;
         }
+        .User,.Data,.Address,.Company{
+            display: flex;
+            width: 50vw;
+            background-color: lightsteelblue;
+            align-content: center;
+            justify-content: center;
+        }
+
 
         h3{
             text-align: center;
             width: 12vw;
             word-break: normal;
             margin: 0;
-
-            font-family: "Rubik", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 700;
-            font-style: normal;
-        }
-        .h3{
-            margin-top: 8px;
         }
 
         button{
-            background-color: cadetblue;
-            width: 8vw;
-            height: 4vh;
+            background-color: lightsteelblue;
+            width: 14vw;
+            height: 6vh;
             border-radius: 4px;
             margin: 8px;
             font-size: 2vh;
-            color: white;
-            font-family: "Rubik", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+
+        }
+        .Button{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
         }
 
         button:hover{
-            background-color:#002ead;
+            background-color:lightblue;
             transition: 0.5s;
+        }
+        .userpost{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-around;
+            align-items: stretch;
+            justify-content: center;
+        }
+        .Post{
+            display: flex;
+            flex-direction: column;
+            background: lightsteelblue;
+            margin-top: 10px;
         }
 
     </style>
