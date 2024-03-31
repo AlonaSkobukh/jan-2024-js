@@ -7,12 +7,6 @@
 body{
     margin: 0;
     display: flex;
-    overflow-x: hidden;
-    background-image: url("png/background3.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 .div1{
@@ -25,21 +19,26 @@ body{
 }
 
 .div31{
-    width: 50vw;
+    width: 50%;
     height: 25vh;
     border-radius: 10px;
-    background: rgb(31,32,33);
-    background: linear-gradient(90deg, rgba(31,32,33,0.9669117647058824) 30%, rgba(92,91,89,1) 90%, rgba(136,133,129,0.9136904761904762) 100%);
+    background:lightsteelblue;
+    display: flex;
+    align-items: center;
+    padding-left: 70px;
+    margin-left: 300px;
+;
 }
 
 .div32{
     margin: 10px;
+    margin-left: 50px;
     width: 80vw;
     height: 70vh;
     display: grid;
     grid-template-columns: repeat(4, 300px);
     justify-content: center;
-    align-items: center;
+    align-content: center;
     grid-gap: 20px;
 }
 
@@ -47,17 +46,12 @@ body{
     width: 20vw;
     height: 20vh;
     border-radius: 10px;
-    background: rgb(31,32,33);
-    background: linear-gradient(90deg, rgba(31,32,33,0.9669117647058824) 35%, rgba(112,110,106,0.8716736694677871) 75%, rgba(136,133,129,0.9136904761904762) 100%);
+    background: lightsteelblue;
+
 }
 
 .div32,.div31{
-    color: white;
+
     text-align: center;
-    font-family: "Noto Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-variation-settings:
-            "wdth" 100;
+
 }
