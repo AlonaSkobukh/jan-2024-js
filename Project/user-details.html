@@ -20,10 +20,15 @@
         }
         .User,.Data,.Address,.Company{
             display: flex;
-            width: 50vw;
+            width: 95%;
             background-color: lightsteelblue;
             align-content: center;
             justify-content: center;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 2vh;
+            flex-direction: column;
+            align-items: center;
         }
 
 
@@ -35,8 +40,8 @@
         }
 
         button{
-            background-color: lightsteelblue;
-            width: 14vw;
+            background-color: lightgrey;
+            width: 90%;
             height: 6vh;
             border-radius: 4px;
             margin: 8px;
@@ -44,6 +49,9 @@
             display: flex;
             align-items: center;
             padding-left: 50px;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
 
         }
         .Button{
@@ -51,10 +59,11 @@
             justify-content: center;
             align-content: center;
             align-items: center;
+            border-radius: 6px;
         }
 
         button:hover{
-            background-color:lightblue;
+            background-color:lightsteelblue;
             transition: 0.5s;
         }
         .userpost{
@@ -64,12 +73,16 @@
             align-content: space-around;
             align-items: stretch;
             justify-content: center;
+            border-radius:6px;
         }
         .Post{
             display: flex;
+            align-items: center;
+            width: 90%;
             flex-direction: column;
             background: lightsteelblue;
             margin-top: 10px;
+            border-radius: 6px;
         }
 
     </style>
@@ -99,7 +112,6 @@
             let div1 = document.createElement('div');
             div1.classList.add('user1')
             document.body.appendChild(div1)
-
             let User = document.createElement('h4')
             User.innerText = `
             Name - ${user.name}
@@ -109,16 +121,21 @@
 
             let Data = document.createElement('div')
             Data.classList.add('Data')
+            let Data1 = document.createElement('h3')
+            Data1.innerText = 'Data'
             let three = document.createElement('p');
             three.innerText = `
             email: ${user.email}
             phone: ${user.phone}
             website: ${user.website} `
-            Data.append(three)
+            Data.append(Data1,three)
 
 
             let Address = document.createElement('div')
             Address.classList.add('Address')
+            let Address1 = document.createElement('h3')
+            Address1.innerText = 'Address'
+            Address1.classList.add('Address1')
             let four = document.createElement('p')
             let address = user.address
             four.innerText = `
@@ -128,17 +145,19 @@
             Zipcode - ${address.zipcode}
             Geo - lat:"${address.geo.lat}"
             Geo - lng:"${address.geo.lng}"`
-            Address.append(four)
+            Address.append(Address1,four)
 
             let Company = document.createElement('div')
             Company.classList.add('Company')
+            let Company1 = document.createElement('h3')
+            Company1.innerText = 'Company'
             let five = document.createElement('p')
             let company = user.company
             five.innerText = `
             Company name: ${company.name}
             Catch Phrase: ${company.catchPhrase}
             bs: ${company.bs}`
-            Company.append(five)
+            Company.append(Company1,five)
             div1.append(User,Data,Address,Company)
 
             let Button = document.createElement('div')
